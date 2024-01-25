@@ -1,0 +1,49 @@
+﻿<Window x:Class="Lab1Ssadik.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1Ssadik"
+        mc:Ignorable="d"
+        Title="Преобразователь" Height="500" Width="800" MinWidth="450" MinHeight="350" MaxWidth="1280" MaxHeight="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Label>Введите начальное число</Label>
+            <TextBox Name="startNumberBox" Margin="5 0 10 0"></TextBox>
+        </StackPanel>
+
+        <ScrollViewer Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top">
+            <StackPanel>
+                <Label>Последовательность действий</Label>
+                <ListBox x:Name="actionList" Height="200" DisplayMemberPath="NameAction">
+
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 20 0 0">
+            <Label HorizontalAlignment="Center">Введите число для действий</Label>
+            <TextBox Name="inputBox" Margin="10 0 10 0"></TextBox>
+            <Label HorizontalAlignment="Center">Выберите какое действие выполнять</Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="0 0 10 0" Click="Add_Click">Add</Button>
+                <Button Click="Multiply_Click">Multiply</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="200" Click="Convert_Click">Преобразовать</Button>
+
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" x:Name="resultText">Результат: </TextBlock>
+    </Grid>
+</Window>
