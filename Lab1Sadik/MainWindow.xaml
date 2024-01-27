@@ -3,47 +3,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Lab1Ssadik"
         mc:Ignorable="d"
-        Title="Преобразователь" Height="500" Width="800" MinWidth="450" MinHeight="350" MaxWidth="1280" MaxHeight="800">
+        Title="Преобразователь" Height="500" Width="850">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
             <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel>
-            <Label>Введите начальное число</Label>
-            <TextBox Name="startNumberBox" Margin="5 0 10 0"></TextBox>
-        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+            <TextBox 
+  VerticalAlignment="Center" 
+  materialDesign:HintAssist.Hint="Введите начальное значение" 
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Name="startNumberBox" Margin="5" FontSize="20" />
+        </Grid>
 
-        <ScrollViewer Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top">
-            <StackPanel>
-                <Label>Последовательность действий</Label>
-                <ListBox x:Name="actionList" Height="200" DisplayMemberPath="NameAction">
+        <ScrollViewer Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label FontSize="20">Последовательность действий</Label>
+
+                <materialDesign:Snackbar 
+  x:Name="SnackbarSeven" 
+  MessageQueue="{materialDesign:MessageQueue}" 
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"/>
+
+                <ListBox 
+  IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" x:Name="actionList" Height="200" DisplayMemberPath="NameAction" Grid.Row="1" FontSize="20">
 
                 </ListBox>
-            </StackPanel>
+            </Grid>
         </ScrollViewer>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 20 0 0">
-            <Label HorizontalAlignment="Center">Введите число для действий</Label>
-            <TextBox Name="inputBox" Margin="10 0 10 0"></TextBox>
-            <Label HorizontalAlignment="Center">Выберите какое действие выполнять</Label>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Margin="0 0 10 0" Click="Add_Click">Add</Button>
-                <Button Click="Multiply_Click">Multiply</Button>
-            </StackPanel>
-        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
-        <Button Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="200" Click="Convert_Click">Преобразовать</Button>
+            <TextBox 
+  VerticalAlignment="Top" 
+  materialDesign:HintAssist.Hint="Введите значение для действия" 
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Name="inputBox" Grid.Row="0" Grid.ColumnSpan="2" FontSize="20" Margin="5 0 5 0"/>
 
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" x:Name="resultText">Результат: </TextBlock>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" >Выберите какое действие выполнять</Label>
+            <Button Grid.Row="2" Click="Add_Click" Margin="10 0 10 0" Height="45">Add</Button>
+            <Button Grid.Row="2" Click="Multiply_Click" Grid.Column="1" Height="45">Multiply</Button>
+            
+        </Grid>
+
+        <Button Grid.ColumnSpan="2" Grid.Row="2" Margin="20 0 20 0" Click="Convert_Click" Height="45">Преобразовать</Button>
+
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" x:Name="resultText">Результат:</TextBlock>
     </Grid>
 </Window>

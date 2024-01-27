@@ -1,5 +1,6 @@
 ﻿using Lab1Sadik;
 using Lab1Sadik.Model;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -34,7 +35,7 @@ namespace Lab1Ssadik
             }
             catch(FormatException ex)
             {
-                MessageBox.Show("Не правильный формат числа для действия");
+                SnackbarSeven.MessageQueue?.Enqueue("Не правильный формат числа для действия!", null, null, null, false, true, TimeSpan.FromSeconds(1.5));
             }
             
         }
@@ -49,7 +50,7 @@ namespace Lab1Ssadik
 
             } catch (FormatException ex)
             {
-                MessageBox.Show("Не правильный формат числа для действия");
+                SnackbarSeven.MessageQueue?.Enqueue("Не правильный формат числа для действия", null, null, null, false, true, TimeSpan.FromSeconds(1.5));
             }
         }
 
@@ -65,10 +66,12 @@ namespace Lab1Ssadik
                 resultText.Text = $"Результат: {Calculate(actions[0].action, actions[1].action).ToString()}";
             } catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show("Должно быть 2 действия");
-            } catch (ArgumentException ex)
+                SnackbarSeven.MessageQueue?.Enqueue("Должно быть 2 действия", null, null, null, false, true, TimeSpan.FromSeconds(1.5));
+            }
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Введите начальное число");
+                SnackbarSeven.MessageQueue?.Enqueue("Введите начальное число", null, null, null, false, true, TimeSpan.FromSeconds(1.5));
+
             }
         }
 
@@ -79,7 +82,8 @@ namespace Lab1Ssadik
                 actions.Add(calculationAction);
             } else
             {
-                MessageBox.Show("Максимум 2 действия может быть");
+                SnackbarSeven.MessageQueue?.Enqueue("Максимум 2 действия может быть", null, null, null, false, true, TimeSpan.FromSeconds(1.5));
+
             }
         }
     }
