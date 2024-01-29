@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2Sadik
 {
-    interface ICalculation
+    public interface ICalculation
     {
         double Perform(double x);
     }

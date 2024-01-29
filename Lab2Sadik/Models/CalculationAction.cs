@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab2Sadik.Model
+namespace Lab2Sadik.Models
 {
     public class CalculationAction
     {

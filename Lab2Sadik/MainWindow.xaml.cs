@@ -1,5 +1,5 @@
 ﻿using Lab2Sadik;
-using Lab2Sadik.Model;
+using Lab2Sadik.Models;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
