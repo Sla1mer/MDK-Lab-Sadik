@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1Sadik", "Lab1Sadik.csproj", "{3D063E42-5B41-4722-AB9C-66A1D2D72A86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2Sadik", "..\Lab2Sadik\Lab2Sadik.csproj", "{0B8E604B-7C3D-4FCD-A16A-DA44565211F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2Sadik", "..\Lab2Sadik\Lab2Sadik.csproj", "{0B8E604B-7C3D-4FCD-A16A-DA44565211F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3ASadik", "..\Lab3ASadik\Lab3ASadik.csproj", "{35121BE4-D245-4547-AAB2-7A3C567010D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0B8E604B-7C3D-4FCD-A16A-DA44565211F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8E604B-7C3D-4FCD-A16A-DA44565211F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8E604B-7C3D-4FCD-A16A-DA44565211F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35121BE4-D245-4547-AAB2-7A3C567010D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35121BE4-D245-4547-AAB2-7A3C567010D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35121BE4-D245-4547-AAB2-7A3C567010D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35121BE4-D245-4547-AAB2-7A3C567010D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
